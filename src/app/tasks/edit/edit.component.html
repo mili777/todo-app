@@ -1,0 +1,31 @@
+<div class="container">
+    <legend>Update A New Task</legend>
+    <div class="mb-3">
+      <label for="txtTaskTitle" class="form-label">Task Title</label>
+      <input
+        type="text"
+        [(ngModel)]="taskForm.title"
+        class="form-control"
+        id="txtTaskTitle"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="txtDescription" class="form-label">Description</label>
+      <input
+        type="text"
+        [(ngModel)]="taskForm.description"
+        class="form-control"
+        id="txtDescription"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="txtPriority" class="form-label">Priority</label>
+      <input
+        type="number"
+        [(ngModel)]="taskForm.priority"
+        class="form-control"
+        id="txtPriority"
+      />
+    </div>
+    <button type="button" class="btn btn-dark" (click)="udapte()">Create</button>
+  </div>
