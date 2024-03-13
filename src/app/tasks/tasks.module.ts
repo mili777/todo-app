@@ -6,10 +6,18 @@ import { HomeComponent } from './home/home.component';
 import { StoreModule } from '@ngrx/store';
 import { taskReducer } from './store/tasks.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { TasksEffect } from './store/tasks.effect';
+import { TasksEffect } from './store/tasks.effects';
 import { AddComponent } from './add/add.component';
 import { FormsModule } from '@angular/forms';
 import { EditComponent } from './edit/edit.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [HomeComponent, AddComponent, EditComponent],
@@ -18,7 +26,14 @@ import { EditComponent } from './edit/edit.component';
     TasksRoutingModule,
     FormsModule,
     StoreModule.forFeature('mytasks', taskReducer),
-    EffectsModule.forFeature([TasksEffect])
+    EffectsModule.forFeature([TasksEffect]),
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule,
+    MatCardModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
 })
 export class TasksModule {}

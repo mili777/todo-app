@@ -1,31 +1,28 @@
-<div class="container">
-    <legend>Update A New Task</legend>
-    <div class="mb-3">
-      <label for="txtTaskTitle" class="form-label">Task Title</label>
-      <input
+<div class="">
+    <h2>Update task</h2>
+    <div class="form-fields">
+      <mat-form-field>
+        <mat-label>Task Title</mat-label>
+        <input matInput 
         type="text"
         [(ngModel)]="taskForm.title"
-        class="form-control"
-        id="txtTaskTitle"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="txtDescription" class="form-label">Description</label>
-      <input
+        #txtTaskTitle>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput 
         type="text"
         [(ngModel)]="taskForm.description"
-        class="form-control"
-        id="txtDescription"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="txtPriority" class="form-label">Priority</label>
-      <input
+        #txtDescription>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <input matInput 
         type="number"
         [(ngModel)]="taskForm.priority"
-        class="form-control"
-        id="txtPriority"
-      />
+        #txtPriority>
+      </mat-form-field>
     </div>
-    <button type="button" class="btn btn-dark" (click)="udapte()">Create</button>
+    <button type="button" class="btn btn-dark" (click)="udapte()">Update</button>
   </div>

@@ -1,16 +1,28 @@
 {
-    "tasks": [
-      {
-        "id": "1",
-        "title": "Harry Potter and the Philosopher's Stone",
-        "description": "J. K. Rowling2",
-        "priority": 5
-      },
-      {
-        "id": "2",
-        "title": "Lewis Carroll",
-        "description": "Alice's Adventures in Wonderland",
-        "priority": 3
-      }
-    ]
-  }
+  "tasks": [
+    {
+      "id": "2",
+      "title": "Lewis Carroll 2",
+      "description": "Alice's Adventures in Wonderland",
+      "priority": 3
+    },
+    {
+      "id": 0,
+      "title": "new taskkk",
+      "description": "dsgdsg",
+      "priority": 1
+    },
+    {
+      "id": 0,
+      "title": "gfjgf",
+      "description": "fgjgfj",
+      "priority": -4
+    },
+    {
+      "id": 0,
+      "title": "New task",
+      "description": "safsaf sa",
+      "priority": 1
+    }
+  ]
+}

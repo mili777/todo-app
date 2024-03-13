@@ -5,16 +5,25 @@ import { selectAppState } from 'src/app/shared/store/app.selector';
 import { Appstate } from 'src/app/shared/store/appstate';
 import { invokeTasksAPI, invokeDeleteTaskAPI } from '../store/tasks.action';
 import { selectTasks } from '../store/tasks.selector';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
+
 
 declare var window: any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private store: Store, private appStore: Store<Appstate>) {}
+  constructor(private store: Store, private appStore: Store<Appstate>, public dialog: MatDialog) {}
 
   tasks$ = this.store.pipe(select(selectTasks));
 
@@ -22,16 +31,17 @@ export class HomeComponent implements OnInit {
   idToDelete: number = 0;
 
   ngOnInit(): void {
-    this.deleteModal = new window.bootstrap.Modal(
-      document.getElementById('deleteModal')
-    );
+    this.deleteModal = document.getElementById('deleteModal')
 
     this.store.dispatch(invokeTasksAPI());
   }
 
   openDeleteModal(id: number) {
+    this.dialog.open(this.deleteModal, {
+      width: '250px'
+    });
     this.idToDelete = id;
-    this.deleteModal.show();
+    //this.deleteModal.show();
   }
 
   delete() {
