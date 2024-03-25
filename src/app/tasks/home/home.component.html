@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col col-md-4 offset-md-4">
-        <a mat-mini-fab matTooltip="Link" routerLink="/add">Add A New Task</a>
+        <a mat-mini-fab matTooltip="Link" routerLink="./add">Add A New Task</a>
       </div>
     </div>
     <mat-divider></mat-divider>
@@ -31,7 +31,7 @@
             <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-actions>
-            <a mat-mini-fab matTooltip="Link" [routerLink]="['/edit', task.id]">Edit</a>
+            <a mat-mini-fab matTooltip="Link" [routerLink]="['./edit', task.id]">Edit</a>
             <button mat-button (click)="openDeleteModal(task.id)">Delete</button>
           </mat-card-actions>
         </mat-card>

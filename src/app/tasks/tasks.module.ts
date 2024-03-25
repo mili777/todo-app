@@ -17,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatCardModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDialogModule
   ],
 })
 export class TasksModule {}

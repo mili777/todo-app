@@ -1,0 +1,15 @@
+<div class="login-form">
+    <div class="login-info">
+        <h3>Username and Password</h3>
+        <h6>Admin -> sladjan:sladjan123<br>User -> john:john1234</h6>
+    </div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Username</mat-label>
+      <input type="text" matInput #username placeholder="Username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput #password placeholder="Password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login(username.value, password.value)">Login</button>
+</div>

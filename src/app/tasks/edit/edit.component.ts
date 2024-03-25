@@ -27,6 +27,7 @@ export class EditComponent implements OnInit {
     title: '',
     description: '',
     priority: 0,
+    owner_id: 1
   };
 
   ngOnInit(): void {

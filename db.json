@@ -4,25 +4,50 @@
       "id": "2",
       "title": "Lewis Carroll 2",
       "description": "Alice's Adventures in Wonderland",
-      "priority": 3
+      "priority": 3,
+      "owner_id": 1
     },
     {
-      "id": 0,
-      "title": "new taskkk",
-      "description": "dsgdsg",
-      "priority": 1
+      "id": "0",
+      "title": "ffffwww",
+      "description": "dddd",
+      "priority": 3,
+      "owner_id": 1
     },
     {
-      "id": 0,
+      "id": "0",
       "title": "gfjgf",
       "description": "fgjgfj",
-      "priority": -4
+      "priority": 4,
+      "owner_id": 2
+    },
+    {
+      "id": "0",
+      "title": "New task",
+      "description": "safsaf sa",
+      "priority": 1,
+      "owner_id": 2
     },
     {
       "id": 0,
-      "title": "New task",
-      "description": "safsaf sa",
-      "priority": 1
+      "title": "ffff",
+      "description": "dddd",
+      "priority": 3,
+      "owner_id": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "",
+      "password": "",
+      "admin": true
+    },
+    {
+      "id": "2",
+      "username": "john",
+      "password": "john123",
+      "admin": false
     }
   ]
 }

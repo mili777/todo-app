@@ -3,5 +3,6 @@ export interface Tasks {
     title: string;
     description: string;
     priority: number;
+    owner_id: number
   }
   
