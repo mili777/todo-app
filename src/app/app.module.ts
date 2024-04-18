@@ -13,12 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { FrontpageComponent } from './frontpage/frontpage.component';
+import {MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent  
+    LoginComponent,
+    FrontpageComponent  
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ import { MatInputModule } from '@angular/material/input';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
 
   ],
   providers: [],

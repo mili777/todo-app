@@ -10,7 +10,7 @@ import { invokeSaveNewTaskAPI } from '../store/tasks.action';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss'],
+  styleUrls: ['./add.component.scss', '../../app.component.scss'],
 })
 export class AddComponent implements OnInit {
   constructor(
@@ -18,13 +18,17 @@ export class AddComponent implements OnInit {
     private appStore: Store<Appstate>,
     private router: Router
   ) {}
+  
+  value: string = window.localStorage.getItem('currentUser');
+  model: Object = JSON.parse(this.value);
+  
 
   taskForm: Tasks = {
-    id: 0,
+    id: Math.floor(Math.random() * 1000000000).toString(),
     title: '',
     description: '',
     priority: 0,
-    owner_id: 1
+    owner_id: this.model["id"]
   };
 
   ngOnInit(): void {}
@@ -37,7 +41,7 @@ export class AddComponent implements OnInit {
         this.appStore.dispatch(
           setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
         );
-         this.router.navigate(['/']);
+         this.router.navigate(['/tasks']);
       }
     });
   }

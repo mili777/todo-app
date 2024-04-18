@@ -1,49 +1,39 @@
 <div class="container">
     <div class="row">
       <div class="col col-md-4 offset-md-4">
-        <a mat-mini-fab matTooltip="Link" routerLink="./add">Add A New Task</a>
+        <a mat-raised-button color="primary" matTooltip="Link" routerLink="./add">Add A New Task</a>
+      </div>
+      <div class="top-right logout">
+        <button mat-stroked-button color="primary" (click)="logout()" >Logout</button>
       </div>
     </div>
+    <div *ngIf="tasks$ | async as tasks">
+      There are {{tasks.length}} tasks
+    </div>
     <mat-divider></mat-divider>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col" *ngFor="let task of tasks$ | async">
-        <!-- <div class="card">
-           <img src="/assets/task.png" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">{{ task.title }}</h5>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{ task.description }}</li>
-            <li class="list-group-item">${{ task.priority }}</li>
-          </ul>
-          <div class="card-body">
-            <a [routerLink]="['/edit', task.id]" class="btn btn-dark"
-              >Edit task</a
-            >
-            <button class="btn btn-dark" (click)="openDeleteModal(task.id)">
-              Delete
-            </button>
-          </div>
-        </div> -->
-        <mat-card>
+      <div *ngFor="let task of tasks$ | async">
+        <mat-card class="full-width">
           <mat-card-header>
             <mat-card-title>{{ task.title }}</mat-card-title>
             <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
           </mat-card-header>
+          <mat-card-actions *ngIf="isAdmin" class="align-right">
+            <a mat-raised-button matTooltip="Link" [routerLink]="['./edit', task.id]">Edit</a>
+            <!-- <button mat-raised-button color="warn" (click)="openDeleteModal(task.id)">Delete</button> -->
+            <button mat-raised-button color="warn" (click)="openDialog('0ms', '0ms');storeID(task.id)">Delete</button>
+          </mat-card-actions>
+          <mat-divider inset></mat-divider>
           <mat-card-actions>
-            <a mat-mini-fab matTooltip="Link" [routerLink]="['./edit', task.id]">Edit</a>
-            <button mat-button (click)="openDeleteModal(task.id)">Delete</button>
+            <p class="text-left">Task priority: {{task.priority}}</p>
           </mat-card-actions>
         </mat-card>
         <mat-divider></mat-divider>
-
       </div>
     </div>
-  </div>
   
   
   <!-- Modal -->
-  <div id="deleteModal" style="display: none">
+  <!-- <div id="deleteModal" style="display: none">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -59,4 +49,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->

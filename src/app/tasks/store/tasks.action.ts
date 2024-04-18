@@ -32,10 +32,10 @@ export const updateTaskAPISucess = createAction(
 
 export const invokeDeleteTaskAPI = createAction(
   '[Tasks API] Inovke delete task api',
-  props<{id:number}>()
+  props<{id:string}>()
 );
 
 export const deleteTaskAPISuccess = createAction(
   '[Tasks API] deleted task api success',
-  props<{id:number}>()
+  props<{id:string}>()
 );

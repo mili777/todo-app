@@ -12,7 +12,7 @@ import { selectTaskById } from '../store/tasks.selector';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss'],
+  styleUrls: ['./edit.component.scss', '../../app.component.scss'],
 })
 export class EditComponent implements OnInit {
   constructor(
@@ -23,7 +23,7 @@ export class EditComponent implements OnInit {
   ) {}
 
   taskForm: Tasks = {
-    id: 0,
+    id: "0",
     title: '',
     description: '',
     priority: 0,
@@ -33,7 +33,7 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     let fetchData$ = this.route.paramMap.pipe(
       switchMap((params) => {
-        var id = Number(params.get('id'));
+        var id = params.get('id');
         return this.store.pipe(select(selectTaskById(id)));
       })
     );
@@ -42,12 +42,12 @@ export class EditComponent implements OnInit {
         this.taskForm = { ...data };
       }
       else{
-        this.router.navigate(['/']);
+        this.router.navigate(['./tasks']);
       }
     });
   }
 
-  udapte() {
+  update() {
     this.store.dispatch(
       invokeUpdateTaskAPI({ updateTask: { ...this.taskForm } })
     );
@@ -57,7 +57,7 @@ export class EditComponent implements OnInit {
         this.appStore.dispatch(
           setAPIStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
         );
-        this.router.navigate(['/']);
+        this.router.navigate(['./tasks']);
       }
     });
   }

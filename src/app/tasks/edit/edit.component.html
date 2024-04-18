@@ -1,4 +1,7 @@
-<div class="">
+<div class="container">
+  <div class="top-right back">
+    <button routerLink="../../" mat-stroked-button color="primary">Back</button>
+  </div>
     <h2>Update task</h2>
     <div class="form-fields">
       <mat-form-field>
@@ -10,10 +13,9 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Description</mat-label>
-        <input matInput 
-        type="text"
+        <textarea matInput 
         [(ngModel)]="taskForm.description"
-        #txtDescription>
+        #txtDescription> </textarea>
       </mat-form-field>
 
       <mat-form-field>
@@ -24,5 +26,5 @@
         #txtPriority>
       </mat-form-field>
     </div>
-    <button type="button" class="btn btn-dark" (click)="udapte()">Update</button>
+    <button mat-raised-button color="primary" type="button" (click)="update()">Update</button>
   </div>

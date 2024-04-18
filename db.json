@@ -1,52 +1,58 @@
 {
   "tasks": [
     {
-      "id": "2",
-      "title": "Lewis Carroll 2",
-      "description": "Alice's Adventures in Wonderland",
-      "priority": 3,
-      "owner_id": 1
-    },
-    {
-      "id": "0",
-      "title": "ffffwww",
-      "description": "dddd",
-      "priority": 3,
-      "owner_id": 1
-    },
-    {
-      "id": "0",
-      "title": "gfjgf",
-      "description": "fgjgfj",
-      "priority": 4,
-      "owner_id": 2
-    },
-    {
-      "id": "0",
-      "title": "New task",
-      "description": "safsaf sa",
+      "id": "930708417",
+      "title": "Create new campaign",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "priority": 1,
-      "owner_id": 2
+      "owner_id": "1"
     },
     {
-      "id": 0,
-      "title": "ffff",
-      "description": "dddd",
-      "priority": 3,
-      "owner_id": 2
+      "id": "983108374",
+      "title": "Low priority task",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "priority": 2,
+      "owner_id": "1"
+    },
+    {
+      "id": "656257632",
+      "title": "Lorem ipsum task",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "priority": 1,
+      "owner_id": "3"
+    },
+    {
+      "id": "73713913",
+      "title": "Another task",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "priority": 0,
+      "owner_id": "2"
+    },
+    {
+      "id": "675535798",
+      "title": "New task for John",
+      "description": "john123john123john123 john123john123 john123john123john123john123 john123john123 john123john123john123john123 john123john123 john123john123john123john123 john123john123 john123john123john123john123 john123john123 john123",
+      "priority": 1,
+      "owner_id": "2"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "",
-      "password": "",
+      "username": "admin",
+      "password": "admin",
       "admin": true
     },
     {
       "id": "2",
       "username": "john",
       "password": "john123",
+      "admin": false
+    },
+    {
+      "id": "3",
+      "username": "test",
+      "password": "test123",
       "admin": false
     }
   ]

@@ -1,31 +1,30 @@
 <div class="container">
+  <div class="top-right back">
+    <button routerLink="../" mat-stroked-button color="primary">Back</button>
+  </div>
     <legend>Add A New Task</legend>
-    <div class="mb-3">
-      <label for="txtTaskTitle" class="form-label">Task title</label>
-      <input
+    <mat-form-field>
+      <mat-label>Task title</mat-label>
+      <input matInput
         type="text"
         [(ngModel)]="taskForm.title"
-        class="form-control"
-        id="txtTaskTitle"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="txtDescription" class="form-label">Description</label>
-      <input
+        #txtTaskTitle>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput
         type="text"
         [(ngModel)]="taskForm.description"
-        class="form-control"
-        id="txtDescription"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="txtCost" class="form-label">Priority</label>
-      <input
+        #txtDescription></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <input matInput
         type="number"
+        min="1"
+        max="5"
         [(ngModel)]="taskForm.priority"
-        class="form-control"
-        id="txtPriority"
-      />
-    </div>
-    <button type="button" class="btn btn-dark" (click)="save()">Create</button>
+        #txtPriority>
+    </mat-form-field>
+    <button type="button" mat-raised-button color="primary" (click)="save()">Create</button>
   </div>

@@ -1,15 +1,23 @@
-<div class="login-form">
+<div class="container">
+    <button routerLink="/" class="top-right home" mat-fab color="primary" aria-label="Fronpage">
+        <mat-icon>home</mat-icon>
+      </button>
     <div class="login-info">
         <h3>Username and Password</h3>
-        <h6>Admin -> sladjan:sladjan123<br>User -> john:john1234</h6>
+        <h6>Admin -> admin:admin<br>
+          User -> john:john123<br>
+          User -> test:test123</h6>
     </div>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <div class="form-fields">
+    <mat-form-field appearance="fill">
       <mat-label>Username</mat-label>
-      <input type="text" matInput #username placeholder="Username">
+      <input matInput type="text" #username placeholder="Username">
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input type="password" matInput #password placeholder="Password">
+        <input matInput type="password" #password placeholder="Password">
     </mat-form-field>
     <button mat-raised-button color="primary" (click)="login(username.value, password.value)">Login</button>
+    <div *ngIf="loginError$">Wrong username or password</div>
+    </div>
 </div>

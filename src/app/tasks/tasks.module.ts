@@ -18,10 +18,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, AddComponent, EditComponent],
+  declarations: [HomeComponent, AddComponent, EditComponent, DialogComponent],
   imports: [
     CommonModule,
     TasksRoutingModule,

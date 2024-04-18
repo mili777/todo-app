@@ -9,35 +9,32 @@ import { TasksService } from '../tasks/tasks.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss', '../app.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  message:string;
+  owner_id: number;
   subscription: Subscription;
+  loginError$ = false;
 
   constructor(private store: Store<any>,private _router : Router, private http: HttpClient, private data: TasksService) {
   }
    
-  
   usersDB = this.http.get('http://localhost:3000/users');
 
-
-  // @Output() onLogin = new EventEmitter<any>();
-  // @Output() onAdmin = new EventEmitter<any>();
-
-  i = -1;
   login(username, password) {
     this.usersDB.forEach(user => {
-      this.i++;
-      if(user[this.i].username === username && user[this.i].password === password) {
-        // this.onLogin.emit(true);
-        // this.onAdmin.emit(user[this.i].admin);
-        this.subscription = this.data.currentMessage.subscribe(message => this.message = user[this.i].id)
-        this.data.changeMessage(user[this.i].id)
-        this._router.navigateByUrl('/tasks');
-      }
-      
+      let result = Object.keys(user).map((key) => [user[key]]);
+      result.forEach(user => {
+        if(user[0].username === username && user[0].password === password) {
+          this.subscription = this.data.currentId.subscribe(owner_id => this.owner_id = user[0].id)
+          this.data.currentUserID(user[0].id)
+          localStorage.setItem('currentUser', JSON.stringify({ username: username, admin: user[0].admin, id: user[0].id }));
+          this._router.navigateByUrl('tasks');
+        } else {
+          this.loginError$ = true;
+        }
+      })
     });
   }
 
